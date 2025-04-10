@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, initial-scale=1">
+      <title>Document</title>
+      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+      <link rel="stylesheet" href="style.css">
+  
+      <script src="https://unpkg.com/scrollreveal"></script>
+ 
+</head>
+<body>
+      
+            <div class="self">
+                  <span> <h1>Vinay Kumar HS</h1></span>
+                   <label>Father Name</label>  <strong><span>Shiva Kumar</span></strong><br>
+                  <label> Mother Name</label>  <strong><span>Yashodhamma</span></strong><br>
+                   <label>Languages Known</label>  <strong><span>English, Kannada, Telugu, Hindi</span></strong><br>
+                   <label>Interests</label>  <strong><span>Coding, Cricket, Movies</span></strong><br>
+                   <label>Address</label>  <strong><span>Hampasandra, Gudibande (T), Chikkaballapur(D) - 561-209</span></strong><br>
+                   <label>Contact No</label>  <strong><span>+91-8688139289</span></strong>
+       
+                   <a href="index.html" class="btn" style="margin: 2rem;">Back</a>
+             </div>
+      
+
+      <script src="https://unpkg.com/scrollreveal@4/dist/scrollreveal.min.js"></script>
+      
+  
+      <script>
+            ScrollReveal({
+                  distance: '100px',
+                  duration: 2000,
+                  reset: true,
+                  delay:500,
+            });
+
+            ScrollReveal().reveal('.self h1', {origin: 'top'});
+            ScrollReveal().reveal('', {origin: 'bottom'});
+            ScrollReveal().reveal('.self label', {origin: 'left'});
+            ScrollReveal().reveal('.self strong ', {origin: 'right'});
+
+      </script>
+</body>
+</html>
