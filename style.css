@@ -125,6 +125,12 @@ body{
     color: var(--main-color);
 }
 
+.navbar a.active1{
+    position: flex;
+    left: 0;
+    color: var(--main-color);
+}
+
 .header.sticky .navbar a ::before {
     opacity: .7;
 }
@@ -455,11 +461,135 @@ span{
 
 
 
+/* provide css for experience section*/
+.experience {
+    min-height: 500px;
+    padding-bottom: 7rem;
+}
 
+.experience h2 {
+    margin-bottom: 5rem;
 
+}
 
+.experience-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+}
 
+.experience-container .experience-box {
+    flex: 1 1 30rem;
+    background-image: var(--bg-color);
+    padding: 3rem 2rem 4rem;
+    border-radius: 2rem;
+    box-shadow: 0 .1rem .5rem var(--shadow-color);
+    text-align: center;
+    border-top: .6rem solid var(--main-color);
+    border-bottom: .3rem solid var(--main-color);
+    transition: .4s ease;
+}
 
+.experience-container .experience-box:hover {
+    box-shadow: 0 .1rem 2rem var(--shadow-color);
+    transform: scale(1.02);
+}
+
+.experience-box h1 {
+    font-size: 2.6rem;
+    transition: 0.5s ease;
+    text-align: center;
+    width: 100%;
+}
+
+.experience-box:hover h1 {
+  color: var(--main-color);
+
+}
+
+.experience-box p {
+    font-size: 1.5rem;
+    margin: 1rem 0 3rem;
+}
+
+.experience-box .langs, .experience-box .langs1{
+    padding: 1rem;
+    margin: 0rem;
+    border-radius: 2rem;
+    box-shadow: 0 .1rem .5rem var(--shadow-color);
+    text-align: center;
+    border-top: .6rem solid var(--main-color);
+    border-bottom: .3rem solid var(--main-color);
+    transition: .4s ease;
+}
+
+.experience-box .langs h3, .experience-box .langs1 h3{
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.experience-box .langs h2, .experience-box .langs1 h2{
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.experience-box .langs1 h2{
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.experience-box .langs1 h3{
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.experience-box .langs1{
+    padding: 1rem;
+    margin: 0rem;
+    border-radius: 2rem;
+    box-shadow: 0 .1rem .5rem var(--shadow-color);
+    text-align: center;
+    border-top: .6rem solid var(--main-color);
+    border-bottom: .3rem solid var(--main-color);
+    transition: .4s ease;
+}
+
+.experience-box .langs1:hover{
+    box-shadow: 0 .1rem 2rem var(--shadow-color);
+    transform: scale(1.02);
+    h3{
+        color: var(--main-color);
+    }
+}
+
+.experience-box .langs:hover{
+    box-shadow: 0 .1rem 2rem var(--shadow-color);
+    transform: scale(1.02);
+    h3{
+        color: var(--main-color);
+    }
+}
+
+/* i need both divs should be one by one horizontally */
+.experience-container .experience-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.experience-box .langs, .experience-box .langs1 {
+    flex: 1;
+    text-align: center;
+}
+
+.experience-box .langs h3, .experience-box .langs1 h3 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+}
 
 
 
@@ -572,54 +702,11 @@ span{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .portfolio {
     padding-bottom: 10rem;
     background-color: var(--bg-color);
+    border-radius: 2rem;
+    margin: 2rem;
 }
 
 .portfolio h2 {
@@ -629,6 +716,7 @@ span{
 .portfolio-box {
     height: 100%;
     width: 100%;
+    
 }
 
 .portfolio-container {
@@ -642,6 +730,7 @@ span{
     gap: 3.2rem; 
     align-items: center;
     background: transparent;
+    margin: 2rem;
 }
 
 
@@ -1097,6 +1186,10 @@ section .testimonial-container{
     .navbar a .active {
         color: var(--main-color);
     }
+
+    .navbar a.active1 {
+        color: var(--main-color);
+    }
     
 
     .navbar a::before{
@@ -1469,3 +1562,128 @@ section .testimonial-container{
 .tooltip:hover::after {
     opacity: 1;
 }
+
+
+/* i need responsive css for experience section it will work on all devices */
+
+@media (max-width: 768px) {
+    .experience-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .experience-container .experience-box {
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .experience-box .langs, .experience-box .langs1 {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .experience-container {
+        gap: 1rem;
+    }
+
+    .experience-box h1 {
+        font-size: 2rem;
+    }
+
+    .experience-box p {
+        font-size: 1.2rem;
+    }
+
+    .experience-box .langs h3, .experience-box .langs1 h3 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .experience-box h1 {
+        font-size: 1.8rem;
+    }
+
+    .experience-box p {
+        font-size: 1rem;
+    }
+
+    .experience-box .langs h3, .experience-box .langs1 h3 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .experience-box h1 {
+        font-size: 1.6rem;
+    }
+
+    .experience-box p {
+        font-size: 0.9rem;
+    }
+
+    .experience-box .langs h3, .experience-box .langs1 h3 {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 280px) {
+    .experience-box h1 {
+        font-size: 1.4rem;
+    }
+
+    .experience-box p {
+        font-size: 0.8rem;
+    }
+
+    .experience-box .langs h3, .experience-box .langs1 h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 240px) {
+    .experience-box h1 {
+        font-size: 1.2rem;
+    }
+
+    .experience-box p {
+        font-size: 0.7rem;
+    }
+
+    .experience-box .langs h3, .experience-box .langs1 h3 {
+        font-size: 1rem;
+    }
+}
+
+
+@media (max-width: 200px) {
+    .experience-box h1 {
+        font-size: 1rem;
+    }
+
+    .experience-box p {
+        font-size: 0.6rem;
+    }
+
+    .experience-box .langs h3, .experience-box .langs1 h3 {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 160px) {
+    .experience-box h1 {
+        font-size: 0.8rem;
+    }
+
+    .experience-box p {
+        font-size: 0.5rem;
+    }
+
+    .experience-box .langs h3, .experience-box .langs1 h3 {
+        font-size: 0.6rem;
+    }
+}
+
