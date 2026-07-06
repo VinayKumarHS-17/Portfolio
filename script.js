@@ -116,27 +116,46 @@ sliceText()
 // Function to show a success message when form is submitted
 // Wait until the page loads completely
 document.addEventListener("DOMContentLoaded", function () {
-    // Get the form element
-    let form = document.getElementById("contactForm");
 
-    // Check if form exists before adding event listener
-    if (form) {
-        form.addEventListener("submit", function (event) {
-            event.preventDefault(); // Stop page reload
+    console.log("Page loaded");
 
-            // Display the SweetAlert success message
+    emailjs.init("J5ThxfElzC0bwSa4E");
+    console.log("EmailJS initialized");
+
+    const form = document.getElementById("contactForm");
+    console.log("Form:", form);
+
+    form.addEventListener("submit", function (e) {
+
+        e.preventDefault();
+        console.log("Submit clicked");
+
+        emailjs.sendForm(
+            "service_2g8sm9q",
+            "template_q779g4q",
+            this
+        )
+        .then(function (response) {
+            console.log("SUCCESS!", response);
+
             Swal.fire({
                 icon: "success",
-                title: "Message Sent!",
-                text: "Your message has been sent successfully.",
-                confirmButtonColor: "#3085d6",
-                confirmButtonText: "OK"
+                title: "Message Sent!"
             });
 
-            // Reset the form fields after submission
             form.reset();
+
+        })
+        .catch(function (error) {
+            console.error("FAILED!", error);
+
+            Swal.fire({
+                icon: "error",
+                title: "Failed!",
+                text: JSON.stringify(error)
+            });
         });
-    } else {
-        console.error("Form not found! Check your HTML for id='contactForm'.");
-    }
+
+    });
+
 });
